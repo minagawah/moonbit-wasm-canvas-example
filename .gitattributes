@@ -1,0 +1,8 @@
+*.mbt linguist-detectable=true
+*.ts linguist-detectable=false
+*.js linguist-detectable=false
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+*.mbt linguist-language=MoonBit
+.mooncakes/* linguist-generated=true
+target/* linguist-generated=true

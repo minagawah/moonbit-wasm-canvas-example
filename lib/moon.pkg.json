@@ -1,0 +1,11 @@
+{
+  "link": {
+    "wasm-gc": {
+      "exports": [
+        "new",
+        "reset",
+        "draw"
+      ]
+    }
+  }
+}

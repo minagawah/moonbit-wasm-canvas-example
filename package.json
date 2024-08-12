@@ -1,0 +1,55 @@
+{
+  "name": "moonbit-wasm-canvas-example",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Moonbit WASM example managing Canvas API",
+  "main": "dist/index.html",
+  "scripts": {
+    "prettier": "prettier --write \"*.{js,md,json}\" \"js/*.{css,html,js}\"",
+    "clean:js": "rimraf target/*.*",
+    "clean": "rimraf target",
+    "build:css": "postcss styles --dir target/css",
+    "watch:css": "nodemon -x $npm_execpath run build:css -e css,html -w styles -w js",
+    "watch:js": "NODE_ENV=development webpack serve",
+    "dev": "$npm_execpath run clean:js && concurrently \"$npm_execpath run watch:css\" \"moon run\" \"$npm_execpath run watch:js\"",
+    "build:moon": "moon build --target wasm-gc",
+    "build": "$npm_execpath run clean && $npm_execpath run build:css && $npm_execpath run build:moon && NODE_ENV=production webpack"
+  },
+  "repository": "https://github.com/minagawah/moonbit-wasm-canvas-example.git",
+  "keywords": [
+    "MoonBit",
+    "Canvas API"
+  ],
+  "author": "minagawah <minag@tokyo800.jp>",
+  "license": "(Unlicense OR MIT)",
+  "bugs": {
+    "url": "https://github.com/minagawah/moonbit-wasm-canvas-example/issues"
+  },
+  "dependencies": {
+    "core-js": "^3.37.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.25.0",
+    "autoprefixer": "^10.4.19",
+    "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^8.2.2",
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.0",
+    "nodemon": "^3.1.4",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-loader": "^8.1.1",
+    "postcss-mixins": "^10.0.1",
+    "postcss-preset-env": "^9.6.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^5.0.9",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}

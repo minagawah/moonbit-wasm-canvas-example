@@ -1,0 +1,13 @@
+{
+  "name": "moonbit-wasm-canvas-example",
+  "version": "0.1.0",
+  "readme": "README.md",
+  "repository": "https://github.com/minagawah/moonbit-wasm-canvas-example.git",
+  "author": "minagawah <minag@tokyo800.jp>",
+  "license": "(Unlicense OR MIT)",
+  "keywords": [
+    "MoonBit",
+    "Canvas API"
+  ],
+  "description": "Moonbit WASM example managing Canvas API"
+}
